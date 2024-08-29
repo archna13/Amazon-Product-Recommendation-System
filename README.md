@@ -1,2 +1,2 @@
 # Amazon-Product-Recommendation-System
- Advanced product recommendation system for Amazon using machine learning techniques.
+ Developed an advanced product recommendation system for Amazon using machine learning techniques. The project involved designing and implementing recommendation algorithms to suggest products based on user preferences, purchase history, and browsing behavior. Utilized data preprocessing, feature engineering, and model evaluation to enhance recommendation accuracy. Integrated the system into a user-friendly interface, providing personalized product suggestions and improving user experience. Demonstrated proficiency in data science, machine learning, and software development for e-commerce applications.
