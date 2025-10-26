@@ -93,6 +93,4 @@ http://localhost:8501
 ## 👩‍💻 Author
 
 **Archana Manivannan**  
-📧 your.email@example.com  
 
-🔗 [GitHub Profile Link]
