@@ -4,8 +4,8 @@
 ### 🛍️ Introduction
 This project is an NLP-based product search and recommendation system built using Amazon product data. It analyzes product titles and descriptions to identify products that are most relevant to a user's search query. The system uses text preprocessing, TF-IDF vectorization, and cosine similarity to calculate product relevance and rank the top matching products. A Streamlit interface provides an interactive way for users to search and explore recommended products.
 
-### 🌐 Technologies Used
 
+### 🌐 Technologies Used
 - Python
 - Pandas
 - NumPy
