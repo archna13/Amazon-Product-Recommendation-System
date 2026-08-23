@@ -2,85 +2,72 @@
 
 
 ### 🛍️ Introduction
-This project is a Streamlit web application that acts as a search and product recommendation engine using TF-IDF and cosine similarity.
-It analyzes product titles and descriptions from an Amazon dataset to recommend the most relevant products based on a user query.
+This project is an NLP-based product search and recommendation system built using Amazon product data. It analyzes product titles and descriptions to identify products that are most relevant to a user's search query. The system uses text preprocessing, TF-IDF vectorization, and cosine similarity to calculate product relevance and rank the top matching products. A Streamlit interface provides an interactive way for users to search and explore recommended products.
+
+### 🌐 Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- NLTK
+- Scikit-learn
+- Streamlit
+- Pillow
 
 
-### 📂 Project Structure
-```
-product.py               # Main Streamlit app
-amazon_product.csv       # Dataset with product details
-ima.jpg                  # Banner image for the web app
-```
+### 🧾 Installation
 
-
-### ⚙️ Features
-
-- 🔍 Search for products by name or description  
-- 🧠 Text processing using NLTK’s Snowball Stemmer  
-- 📊 TF-IDF Vectorization for feature extraction  
-- 🤝 Cosine Similarity to rank products by relevance  
-- 🌐 Interactive Streamlit interface with image banner  
-
-
-### 🧾 Dependencies
-
-Install the required libraries before running the app:
-
-```
-pandas
-numpy
-nltk
-scikit-learn
-streamlit
-Pillow
-```
-
-You can install them all with:
-
-```
-pip install -r requirements.txt
-```
-
-
-### 🚀 How to Run the App
-
-Clone this repository:
-
+#### Clone the Repository
 ```
 git clone https://github.com/archna13/Amazon-Product-Recommendation-System-using-NLP.git
 ```
 
-Make sure the dataset (`amazon_product.csv`) and image (`ima.jpg`) are in the same directory as `product.py`.
+#### Create a Virtual Environment
+```
+python -m venv .venv
+```
 
-Run the Streamlit application:
+#### Activate the Environment
+```
+.venv\Scripts\activate     # Windows
+source .venv/bin/activate  # Linux/Mac
+```
+
+#### Install Dependencies
+```
+pip install -r requirements.txt
+```
+
+**Note:** Make sure the dataset (`amazon_product.csv`) and image (`ima.jpg`) are in the same directory as `product.py`.
+
+#### Run the Streamlit application:
 
 ```
 streamlit run product.py
 ```
 
-Open the app in your browser at:
+#### Open the app in your browser at:
 
 ```
 http://localhost:8501
 ```
 
 
-### 🧠 How It Works
+### 🧠 Features
 
-#### Preprocessing:
-- Tokenizes and stems text (titles + descriptions) using NLTK.  
-- Creates stemmed tokens for each product.
+- **Data Collection & Cleaning:** The Amazon product dataset is loaded from `amazon_product.csv` using Pandas and prepared for recommendation analysis. Unnecessary fields such as the product ID are removed, while relevant product information is retained.
 
-#### Feature Extraction:
-- Converts text data into numerical TF-IDF vectors.
+- **Text Preprocessing:** Product titles and descriptions are converted to lowercase, tokenized, and processed using NLTK's Snowball Stemmer. The processed title and description text is combined into a standardized representation for similarity analysis.
 
-#### Similarity Calculation:
-- Calculates cosine similarity between the query and product data.  
-- Ranks the top 10 most similar products.
+- **Feature Engineering:** The processed title and description are combined into a single text feature for each product. This allows the recommendation system to consider both product names and descriptions when determining relevance.
 
-#### Output:
-- Displays matching products (title, description, category) in the Streamlit interface.
+- **TF-IDF Feature Extraction:** The processed product text is converted into numerical vectors using *TF-IDF vectorization*. This represents the importance of words across the product dataset and enables mathematical comparison between user queries and products.
+
+- **Similarity Calculation:** Cosine similarity is used to compare the vector representation of the user's search query with the product vectors. Products with higher similarity scores are considered more relevant to the user's query.
+
+- **Product Ranking & Recommendation:** Similarity scores are sorted in descending order to identify the most relevant products. The system selects the top 10 matching products and extracts their title, description, and category for display.
+
+- **Streamlit Search Interface:** A Streamlit web application provides an interactive search interface where users can enter product-related queries and view the recommended products in a structured format. A banner image is also displayed as part of the application interface.
 
 
 ### 🧩 Example Output
@@ -93,13 +80,23 @@ http://localhost:8501
 
 ### 🧱 Future Enhancements
 
-- Integrate product images into recommendations.  
-- Add sentiment analysis for customer reviews.  
-- Include product price and rating filters.  
-- Deploy on Streamlit Cloud or Hugging Face Spaces.
+- **Product Images:** Integrate product images directly into the recommendation results.
+*- **Review Sentiment:** Add sentiment analysis of customer reviews to provide additional product insights.
+- **Price & Rating Filters:** Allow users to filter recommendations based on product price and customer ratings.
+- **Cloud Deployment:** Deploy the application using Streamlit Cloud or Hugging Face Spaces for public access.
 
 
-### 👩‍💻 Author
+### 📂 Project Structure
+```
+product.py               # Main Streamlit app
+amazon_product.csv       # Dataset with product details
+ima.jpg                  # Banner image for the web app
+README.md                # Project documentation
+LICENSE                  # Project license
+```
 
-**Archana Manivannan**  
+
+### 📊 Conclusion
+
+This project demonstrates how NLP techniques can be used to build a practical product search and recommendation system. By combining text preprocessing, TF-IDF, and cosine similarity, the system identifies and ranks products based on their relevance to user queries. The Streamlit interface makes the recommendation process simple, interactive, and accessible to users.
 
